@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Isaac Home Concepts | Master Carpentry & Design</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Good Isaac Home Concepts offers master carpentry, custom furniture, and bespoke interior solutions. Specializing in kitchen cabinets, wardrobes, and unique home concepts in Nairobi, Kenya.">
+    <meta name="keywords" content="carpenter, nairobi, kenya, custom furniture, kitchen cabinets, wardrobes, interior design, good isaac home concepts">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/101828/FFFFFF/png?text=GI" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & GLOBAL STYLES --- */
+        :root {
+            /* Color Palette */
+            --color-dark-navy: #101828;  /* Primary dark background */
+            --color-slate-grey: #344054; /* Secondary text, borders */
+            --color-light-cream: #F8F9FA;/* Light section background */
+            --color-white: #FFFFFF;
+            --color-accent-azure: #005AEE;/* CTAs, highlights */
+            --color-accent-hover: #0048BE;
+
+            /* Typography */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Spacing */
+            --spacing-unit: 8px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-light-cream);
+            color: var(--color-slate-grey);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Utility Classes */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: calc(var(--spacing-unit) * 10) 0; /* 80px */
+        }
+        
+        .section-heading {
+            font-family: var(--font-heading);
+            color: var(--color-dark-navy);
+            font-size: clamp(2rem, 5vw, 2.75rem); /* Responsive font size */
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 6); /* 48px */
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-decoration: none;
+            padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 4);
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .primary-cta {
+            background-color: var(--color-accent-azure);
+            color: var(--color-white);
+        }
+
+        .primary-cta:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-3px);
+        }
+
+        .secondary-cta {
+             background-color: transparent;
+             color: var(--color-dark-navy);
+             border: 2px solid var(--color-dark-navy);
+        }
+        
+        .secondary-cta:hover {
+            background-color: var(--color-dark-navy);
+            color: var(--color-white);
+            transform: translateY(-3px);
+        }
+
+        /* --- Scroll Animation --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        .main-header {
+            background-color: var(--color-light-cream);
+            padding: calc(var(--spacing-unit) * 2) 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-dark-navy);
+            text-decoration: none;
+        }
+        
+        /* --- HERO SECTION --- */
+        .hero {
+            background-color: var(--color-dark-navy);
+            background-image: linear-gradient(rgba(16, 24, 40, 0.7), rgba(16, 24, 40, 0.7)), url('https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=2157&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-white);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: calc(var(--spacing-unit) * 2); /* 16px */
+            animation: title-slide-in 1s ease-out forwards;
+        }
+
+        @keyframes title-slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #EAECEF;
+            margin-bottom: calc(var(--spacing-unit) * 4); /* 32px */
+            animation: title-slide-in 1s ease-out 0.2s forwards;
+            animation-fill-mode: backwards; /* Start animation even if delayed */
+        }
+        
+        .hero .cta-button {
+             animation: title-slide-in 1s ease-out 0.4s forwards;
+             animation-fill-mode: backwards;
+        }
+
+        /* --- CATALOGUE SECTION --- */
+        .catalogue-section {
+            background-color: var(--color-white);
+        }
+
+        .catalogue-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .category-card {
+            position: relative;
+            display: block;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: scale(1.03);
+        }
+
+        .category-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(16, 24, 40, 0.8) 0%, rgba(16, 24, 40, 0) 60%);
+        }
+
+        .category-card h3 {
+            position: absolute;
+            bottom: calc(var(--spacing-unit) * 2);
+            left: calc(var(--spacing-unit) * 2);
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            z-index: 1;
+        }
+        
+        /* --- SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(var(--spacing-unit) * 4);
+            text-align: center;
+        }
+        
+        .service-item i {
+            font-size: 2.5rem;
+            color: var(--color-accent-azure);
+            margin-bottom: var(--spacing-unit);
+        }
+        
+        .service-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-dark-navy);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-section {
+            background-color: var(--color-white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .project-card {
+            background-color: var(--color-light-cream);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-card-content {
+            padding: calc(var(--spacing-unit) * 2);
+        }
+
+        .project-card p {
+            font-weight: 600;
+            color: var(--color-dark-navy);
+        }
+
+        /* --- SOCIALS SECTION --- */
+        .socials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+        
+        .social-card {
+            background-color: var(--color-white);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: calc(var(--spacing-unit) * 4);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        
+        .social-card .social-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-unit);
+        }
+        .fa-instagram { color: #E1306C; }
+        .fa-facebook { color: #1877F2; }
+        .fa-tiktok { color: #000000; }
+        
+        .social-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--color-dark-navy);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+        
+        .social-card a {
+            text-decoration: none;
+        }
+
+        /* --- FOOTER --- */
+        .main-footer {
+            background-color: var(--color-dark-navy);
+            color: #ced4da;
+            padding: calc(var(--spacing-unit) * 6) 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(var(--spacing-unit) * 4);
+            text-align: center;
+        }
+        
+        .footer-grid h3 {
+            font-family: var(--font-heading);
+            color: var(--color-white);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-unit);
+        }
+        
+        .footer-grid p {
+            margin-bottom: var(--spacing-unit);
+        }
+        
+        .footer-socials a {
+            color: var(--color-white);
+            font-size: 1.5rem;
+            margin: 0 calc(var(--spacing-unit) * 1.5);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-socials a:hover {
+            color: var(--color-accent-azure);
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: calc(var(--spacing-unit) * 4);
+            padding-top: calc(var(--spacing-unit) * 2);
+            border-top: 1px solid var(--color-slate-grey);
+            font-size: 0.9rem;
+        }
+
+        /* --- MEDIA QUERIES for larger screens --- */
+        /* Tablet */
+        @media (min-width: 768px) {
+            .catalogue-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: calc(var(--spacing-unit) * 3);
+            }
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .socials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                text-align: left;
+            }
+             .footer-grid .footer-contact, .footer-grid .footer-address {
+                text-align: left;
+            }
+            .footer-grid .footer-socials {
+                text-align: right;
+            }
+            .footer-copyright {
+                text-align: center;
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 1024px) {
+             .catalogue-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- =======================
+    HEADER
+    ======================== -->
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">Good Isaac Home Concepts</a>
+            <a href="tel:+254710593221" class="cta-button secondary-cta">Call Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- =======================
+        HERO SECTION
+        ======================== -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Mastery in Wood. Perfection in Design.</h1>
+                <p>We transform spaces with exquisite craftsmanship, creating bespoke furniture and interiors built to last a lifetime.</p>
+                <a href="#catalogue" class="cta-button primary-cta">Explore Our Craft</a>
+            </div>
+        </section>
+
+        <!-- =======================
+        PRODUCT CATALOGUE SECTION
+        ======================== -->
+        <section id="catalogue" class="catalogue-section section-padding">
+            <div class="container">
+                <h2 class="section-heading fade-in">Product Catalogue</h2>
+                <div class="catalogue-grid">
+                    <!-- Replace href with your actual page links and image URLs -->
+                    <a href="kitchen_cabinets.html" class="category-card fade-in" style="background-image: url('https://images.unsplash.com/photo-1604598436875-48d6f0fb521e?q=80&w=2070&auto=format&fit=crop')">
+                        <h3>Kitchen Cabinets</h3>
+                    </a>
+                    <a href="wardrobes.html" class="category-card fade-in" style="background-image: url('https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=2080&auto=format&fit=crop'); transition-delay: 100ms;">
+                        <h3>Wardrobes</h3>
+                    </a>
+                    <a href="sofas.html" class="category-card fade-in" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop'); transition-delay: 200ms;">
+                        <h3>Sofas & Seating</h3>
+                    </a>
+                    <a href="tv_stand.html" class="category-card fade-in" style="background-image: url('https://images.unsplash.com/photo-1593359677879-a4bb92f82d72?q=80&w=2070&auto=format&fit=crop'); transition-delay: 300ms;">
+                        <h3>TV & Wall Units</h3>
+                    </a>
+                    <a href="office_table.html" class="category-card fade-in" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop'); transition-delay: 400ms;">
+                        <h3>Office Furniture</h3>
+                    </a>
+                    <a href="dinning_table.html" class="category-card fade-in" style="background-image: url('https://images.unsplash.com/photo-1604578762246-41134e37f9cc?q=80&w=2127&auto=format&fit=crop'); transition-delay: 500ms;">
+                        <h3>Dining Sets</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =======================
+        SERVICES SECTION
+        ======================== -->
+        <section class="services-section section-padding">
+            <div class="container">
+                <h2 class="section-heading fade-in">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-item fade-in">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                        <h3>Custom Design</h3>
+                        <p>Bespoke design solutions for kitchens, wardrobes, offices, and retail spaces tailored to your vision.</p>
+                    </div>
+                    <div class="service-item fade-in" style="transition-delay: 150ms;">
+                        <i class="fa-solid fa-hammer"></i>
+                        <h3>Build & Installation</h3>
+                        <p>Expert craftsmanship using premium materials for flawless construction and installation.</p>
+                    </div>
+                    <div class="service-item fade-in" style="transition-delay: 300ms;">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                        <h3>Interior Finishes</h3>
+                        <p>Comprehensive interior solutions including flooring, plastering, painting, and aluminium fabrication.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =======================
+        PROJECTS SECTION
+        ======================== -->
+        <section class="projects-section section-padding">
+            <div class="container">
+                <h2 class="section-heading fade-in">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Replace with your project images and text -->
+                    <div class="project-card fade-in">
+                        <img src="images/isaac_img11.jpg" alt="Custom Bookshelf and Study Table">
+                        <div class="project-card-content">
+                            <p>Custom Bookshelf and Study Table</p>
+                        </div>
+                    </div>
+                    <div class="project-card fade-in" style="transition-delay: 150ms;">
+                        <img src="images/isaac_img6.jpg" alt="Renovated wardrobe installation">
+                        <div class="project-card-content">
+                            <p>Renovation - Wardrobe Installation</p>
+                        </div>
+                    </div>
+                    <div class="project-card fade-in" style="transition-delay: 300ms;">
+                        <img src="images/isaac_img16.jpg" alt="Custom Iron Board Station">
+                        <div class="project-card-content">
+                            <p>Bespoke Iron Board Station</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- =======================
+        SOCIALS SECTION
+        ======================== -->
+        <section class="socials-section section-padding">
+            <div class="container">
+                <h2 class="section-heading fade-in">Follow Our Journey</h2>
+                <div class="socials-grid">
+                    <a href="https://www.instagram.com/izaacabdala?igsh=MXZ1NXcxeXhtb2t3OQ==" target="_blank" class="social-card-link fade-in">
+                        <div class="social-card">
+                            <i class="fa-brands fa-instagram social-icon"></i>
+                            <h3>Latest Builds on Instagram</h3>
+                            <p class="secondary-cta">Follow Us</p>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61555669754205" target="_blank" class="social-card-link fade-in" style="transition-delay: 150ms;">
+                        <div class="social-card">
+                            <i class="fa-brands fa-facebook social-icon"></i>
+                            <h3>Updates on Facebook</h3>
+                            <p class="secondary-cta">Like Our Page</p>
+                        </div>
+                    </a>
+                    <a href="https://www.tiktok.com/@user92493734966723?_t=ZM-8uDkAdjE53u&_r=1" target="_blank" class="social-card-link fade-in" style="transition-delay: 300ms;">
+                        <div class="social-card">
+                            <i class="fa-brands fa-tiktok social-icon"></i>
+                            <h3>Behind the Scenes on TikTok</h3>
+                            <p class="secondary-cta">Watch Now</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =======================
+    FOOTER
+    ======================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Good Isaac Home Concepts</h3>
+                    <p>Quality, durability, and elegance in every piece we create.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:abdalamarenya@gmail.com" style="color: inherit;">abdalamarenya@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+254710593221" style="color: inherit;">+254 710 593 221</a></p>
+                </div>
+                <div class="footer-address">
+                     <h3>Visit Us</h3>
+                     <p>Nairobi, Kenya</p>
+                     <p>Nasra Gardens Estate, Gate A</p>
+                </div>
+            </div>
+            <div class="footer-socials" style="text-align: center; margin-top: 32px;">
+                <a href="https://www.facebook.com/profile.php?id=61555669754205" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/izaacabdala?igsh=MXZ1NXcxeXhtb2t3OQ==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@user92493734966723?_t=ZM-8uDkAdjE53u&_r=1" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 Good Isaac Home Concepts. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.fade-in');
+            elementsToAnimate.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
