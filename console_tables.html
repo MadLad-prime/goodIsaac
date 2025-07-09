@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Category | Good Isaac Home Concepts</title>
+    
+    <!-- Link to the new Gallery Stylesheet -->
+    <link rel="stylesheet" href="gal.css">
+    
+    <!-- Fonts and Icons are required for the new styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="gallery-header">
+        <a href="index.html">← Back to Home</a>
+        <h1>Our Console tables</h1>
+        <p></p>
+    </header>
+
+    <main class="gallery-container">
+        <div id="loader">Loading images...</div>
+        <div id="image-gallery" data-cloudinary-tag="console">
+            <!-- Images will be dynamically inserted here -->
+        </div>
+    </main>
+    
+    <div id="lightbox">
+        <!-- Replaced inline styles with classes -->
+        <button class="lightbox-btn close-btn" title="Close">×</button>
+        <button class="lightbox-btn prev-btn" title="Previous">❮</button>
+        <button class="lightbox-btn next-btn" title="Next">❯</button>
+        <img id="lightbox-img" alt="Lightbox image">
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
